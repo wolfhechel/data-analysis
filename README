@@ -1,0 +1,18 @@
+This is a base container I use for everyday data analysis stuff, picking apart numbers from PDFs, playing around with CSV's etc.
+
+It's based on jupyter/scipy-notebook but added `tabula-py` and `PyPDF2` to be able to pick apart PDF's from inside a notebook.
+
+I've also added OpenRefine, largely inspired by [psychemedias gist](https://gist.github.com/psychemedia/d67e7de29a2d012183681778662ef4b6) from 2 years back (Open new Session by pressing New -> OpenRefine Session)
+
+## Build
+
+```
+git clone https://github.com/wolfhechel/data-analysis.git
+cd data-analysis
+make build
+```
+
+## Usage
+I always work with data on my host machine, hence I mount the working directory to it. Assuming I'm cd'd into the working directory:
+
+`docker run -p 8888:8888 -v $PWD:/home/jovyan/work wolfhechel/data-analysis:latest` 
